@@ -247,7 +247,7 @@ html {
   align-items: baseline;
   padding-left: 0;
   margin-bottom: 0;
-  /*padding-top: 48px;*/
+  padding-top: 48px;
   /*fill: #212121;*/
 }
 
@@ -788,6 +788,10 @@ li {
 }
 
 /*оверлоу для каждой карточки*/
+.product {
+  /*position: relative;*/
+}
+
 .product-card {
   position: relative;
   overflow: hidden;
@@ -801,33 +805,30 @@ li {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.product-card::before {
-  opacity: 1;
+  transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-text {
   position: absolute;
   top: 0;
-  bottom: 0;
+  left: 0;
   padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
-}
-
-.product-text:hover {
-  opacity: 1;
 }
 
 .product:hover .product-card::before {
   transform: translateY(0);
 }
 
+.product:hover .product-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /*псевдоэлемент подчеркивание текуще страницы*/
-/*.link.current {
-  position: relative;
-}*/
+
 .current {
   position: relative;
 
@@ -848,20 +849,4 @@ li {
   width: 100%;
   height: 5px;
   background-color: var(--accent-color);
-
-  /* content: '';
-  position: absolute;
-  /*left: 0;
-  bottom: 0;
-  display: block;
-
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-
-  background-color: var(--accent-color);*/
 }
-
-/*.baby {
-  margin-right: 45px;
-}*/
